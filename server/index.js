@@ -12,10 +12,11 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: ["http://localhost:3000"], 
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    origin: "http://localhost:5173", // Removed trailing slash '/' imp point to be noted
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], 
     credentials: true,
 }));
+
 
 app.use(cookieParser()); 
 app.use(express.json()); 

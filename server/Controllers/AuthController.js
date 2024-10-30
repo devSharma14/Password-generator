@@ -21,8 +21,8 @@ const signup = async (req, res) => {
 
         res.status(201).json({ message: "User signed up successfully", success: true, user });
     } catch (e) {
-        console.error("Signup error:", e); // Log the error message
-        console.error(e.stack); // Log the stack trace for more information
+        console.error("Signup error:", e); 
+        console.error(e.stack); 
         res.status(500).json({ message: "Internal server error" }); 
     }
 };
@@ -46,7 +46,7 @@ const login = async (req, res) => {
             withCredentials: true,
             httpOnly: false,
         });
-        res.status(201).json({ message: "User logged in successfully" });
+        res.status(201).json({ message: "User logged in successfully", success: true, user });
     } catch (error) {
         console.error("Login error:", error);
         res.status(500).json({ message: "Internal server error" });
